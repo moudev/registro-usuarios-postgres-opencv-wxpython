@@ -1,0 +1,41 @@
+
+DEPENDENCIAS PARA EJECUTAR ESTE SOTFWARE
+
+1- Instalar wxpython 
+	comando: apt-get install python-wxgtk2.8
+	
+2- Instalar postgresql
+	comando: apt-get install postgresql-9.4 postgresql-client-9.4  python-psycopg2
+	
+3- Instalar asistente grafico de postgres:
+	comando: apt-get install phppgadmin
+	configuracion:
+		- nano /etc/phppgadmin/config.inc.php
+		- Buscar la linea : $conf['extra_login_security'] = true;
+			y cambiar a false, y guardar
+		-Reiniciar servicio de postgresql
+			comando : service postgresql restart
+		-Ingresar a: http://localhost/phppgadmin/
+
+4- Configurar postgresql:
+	-Entrar a terminal como root, e ingresar
+		comando: su - postgres
+	-Entrar a consola de postgres:
+		comando: psql
+	-Cambiar la contraseña del usuario postgres:
+		Comando: ALTER ROLE postgres WITH PASSWORD '12345'
+	
+
+5- Ingresar a phppgadmin
+	-Ingresar a: http://localhost/phppgadmin/
+	-Loguearse: user: postgres, pass = 12345
+	-Crear base de datos llamada "postgres"(en caso de no estar creada)
+	-Seleccionar base de datos.
+	-Dar click en el menu de opciones en "SQL"
+	-Escoger el archivo: tabla_usuarios.sql y ejecutar sentencia.
+	
+6- Instalar Opencv(Para poder tomar fotografias)
+	-comandos: 
+			apt-get install libopencv-*
+			apt-get isntall python-opencv
+			apt-get install python-numpy
